@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - SoulMatch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Create Your Profile</h2>
+        <form id="profile-form">
+            <label for="profile-pic">profile-pic</label>
+            <input type="file" id="profile-pic" accept="image/*"><br>
+            <textarea id="description" placeholder="Describe yourself"></textarea><br>
+            <label for="status">status</label>
+            <select id="status">
+                <option value="Single">Single</option>
+                <option value="Divorced">Divorced</option>
+                <option value="Unhappily Married">Unhappily Married</option>
+            </select><br>
+            <input type="number" step="0.1" id="height" placeholder="Height (ft)"><br>
+            <input type="text" id="complexion" placeholder="Skin Complexion"><br>
+            <input type="text" id="hair-color" placeholder="Hair Color"><br>
+            <input type="text" id="eye-color" placeholder="Eye Color"><br>
+            <button type="submit">Save Profile</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

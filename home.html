@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - SoulMatch</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Welcome to SoulMatch</h2>
+    <div class="match-list">
+        <p>Here are some recommended matches for you:</p>
+        <div class="match">Match 1</div>
+        <div class="match">Match 2</div>
+        <div class="match">Match 3</div>
+    </div>
+
+    <div id="chatbot-icon" onclick="toggleChat()">💬</div>
+    <div id="chatbot-box">
+        <p>Enter your preferences:</p>
+        <input type="text" id="preference" placeholder="Type here...">
+        <button onclick="getMatch()">Find Match</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
