@@ -12,23 +12,54 @@
     <div class="container">
         <h2>Create Your Profile</h2>
         <form id="profile-form">
-            <label for="profile-pic">profile-pic</label>
-            <input type="file" id="profile-pic" accept="image/*"><br>
-            <textarea id="description" placeholder="Describe yourself"></textarea><br>
-            <label for="status">status</label>
-            <select id="status">
+
+            <label for="profile-pic-input">Profile Picture:</label>
+            <input type="file" id="profile-pic-input" accept="image/*">
+            <img id="profile-preview" style="max-width: 150px; display: none;"><br>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" placeholder="Describe yourself" required></textarea><br>
+
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
                 <option value="Single">Single</option>
                 <option value="Divorced">Divorced</option>
                 <option value="Unhappily Married">Unhappily Married</option>
             </select><br>
-            <input type="number" step="0.1" id="height" placeholder="Height (ft)"><br>
-            <input type="text" id="complexion" placeholder="Skin Complexion"><br>
-            <input type="text" id="hair-color" placeholder="Hair Color"><br>
-            <input type="text" id="eye-color" placeholder="Eye Color"><br>
-            <button type="submit">Save Profile</button>
+
+            <label for="height">Height (ft):</label>
+            <input type="number" step="0.1" id="height" name="height" placeholder="Enter your height in feet"
+                required><br>
+
+            <label for="complexion">Skin Complexion:</label>
+            <input type="text" id="complexion" name="complexion" placeholder="Enter your skin complexion" required><br>
+
+            <label for="hair-color">Hair Color:</label>
+            <input type="text" id="hair-color" name="hair-color" placeholder="Enter your hair color" required><br>
+
+            <label for="eye-color">Eye Color:</label>
+            <input type="text" id="eye-color" name="eye-color" placeholder="Enter your eye color" required><br>
+
+            <button id="complete-profile-btn">Complete Profile</button>
         </form>
     </div>
+
+    <script>
+        document.getElementById('profile-pic-input').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('profile-preview').src = e.target.result;
+                    document.getElementById('profile-preview').style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="script.js"></script>
+
 </body>
 
 </html>

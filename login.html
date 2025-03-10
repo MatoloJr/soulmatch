@@ -5,20 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - SoulMatch</title>
+    <meta name="description" content="Login to SoulMatch and find your perfect match.">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
 </head>
 
 <body>
     <div class="container">
         <h2>Login</h2>
         <form id="login-form">
-            <input type="text" id="login-username" placeholder="Username" required><br>
-            <input type="password" id="login-password" placeholder="Password" required><br>
+            <label for="login-username">Username:</label>
+            <input type="text" id="login-username" name="username" placeholder="Username" required><br>
+
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="password" placeholder="Password" required><br>
+
             <button type="submit">Login</button>
         </form>
         <p>Don't have an account? <a href="index.html">Sign up</a></p>
     </div>
-    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script type="module" src="script.js"></script>
+
+
 </body>
 
 </html>

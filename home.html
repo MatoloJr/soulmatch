@@ -17,14 +17,45 @@
         <div class="match">Match 3</div>
     </div>
 
-    <div id="chatbot-icon" onclick="toggleChat()">💬</div>
-    <div id="chatbot-box">
-        <p>Enter your preferences:</p>
-        <input type="text" id="preference" placeholder="Type here...">
-        <button onclick="getMatch()">Find Match</button>
+    <div id="chatbot-container">
+        <div id="chatbot-icon" onclick="toggleChatbot()">💬</div>
+        <div id="chatbot-box">
+            <div id="chatbot-header">
+                <span>💙 SoulMatch Chatbot</span>
+                <button onclick="toggleChatbot()">✖</button>
+            </div>
+            <div id="chatbot-messages"></div>
+            <input type="text" id="chatbot-input" placeholder="Ask for a match...">
+            <button onclick="getMatches()">🔍 Find Match</button>
+        </div>
     </div>
 
+    <div id="chat-container">
+        <div id="chat-header">💬 Chat</div>
+        <div id="chat-messages"></div>
+        <input type="text" id="chat-input" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function toggleChatbot() {
+            let chatbot = document.getElementById("chatbot-box");
+            chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
+        }
+
+        function sendMessage() {
+            let chatInput = document.getElementById("chat-input");
+            if (chatInput.value.trim() === "") {
+                alert("Please type a message!");
+                return;
+            }
+            // Send message logic here
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="script.js"></script>
+
 </body>
 
 </html>

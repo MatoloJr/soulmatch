@@ -5,30 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup - SoulMatch</title>
+    <meta name="description" content="SoulMatch - A dating site that helps you find your perfect match using AI recommendations.">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
 </head>
 
 <body>
     <div class="container">
         <h2>Signup</h2>
         <form id="signup-form">
-            <input type="text" id="username" placeholder="Username" required><br>
-            <input type="number" id="age" placeholder="Age" required><br>
-            <label for="gender">Gender</label>
-            <select id="gender">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Username" required><br>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" placeholder="Age" required><br>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="Other">Other</option>
             </select><br>
-            <input type="text" id="country" placeholder="Country" required><br>
-            <input type="text" id="city" placeholder="City/Town" required><br>
-            <input type="password" id="password" placeholder="Password" required><br>
-            <input type="password" id="confirm-password" placeholder="Confirm Password" required><br>
+
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" placeholder="Country" required><br>
+
+            <label for="city">City/Town:</label>
+            <input type="text" id="city" name="city" placeholder="City/Town" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Password" required><br>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password"
+                required><br>
+
             <button type="submit">Sign Up</button>
         </form>
         <p>Already have an account? <a href="login.html">Login</a></p>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="script.js"></script>
+
 </body>
 
 </html>
